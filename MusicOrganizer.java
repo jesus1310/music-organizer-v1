@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
-    public ArrayList<String> files;
+    private ArrayList<String> files;
         
     /**
      * Create a MusicOrganizer
