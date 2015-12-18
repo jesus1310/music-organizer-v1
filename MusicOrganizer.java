@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
-    private ArrayList<String> files;
+    public ArrayList<String> files;
         
     /**
      * Create a MusicOrganizer
@@ -64,9 +64,12 @@ public class MusicOrganizer
      * Método que permite comprobar si el índice introducido es válido
      */
     public void checkIndex(int index){
-        if (index < 0 || index >= files.size()){
+        if ((index < 0 || index >= files.size())){
             System.out.println("El índice introducido no es válido");
             System.out.println("El rango válido es desde 0 hasta " + (files.size()-1));
+        }
+        else if (files.size() == 0){
+            System.out.println("No hay ningún objeto en la colección");
         }
     }
     
@@ -75,8 +78,13 @@ public class MusicOrganizer
      */
     public boolean validIndex(int index){
         boolean isValid = false;
-        if(index >= 0 && index < files.size()) {
-            isValid = true;
+        if (files.size() == 0){
+            System.out.println("No hay ningún objeto en la colección");
+        }
+        else{
+            if(index >= 0 && index < files.size()) {
+                isValid = true;
+            }
         }
         return isValid;
     }
